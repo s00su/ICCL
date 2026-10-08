@@ -11,12 +11,22 @@
         @media print {
             .no-print { display: none !important; }
             body { background: white !important; -webkit-print-color-adjust: exact; }
-            .print-container { box-shadow: none !important; margin: 0 !important; padding: 0 !important; width: 100% !important; }
+            .print-container { box-shadow: none !important; margin: 0 !important; padding: 0 !important; width: 100% !important; border: none !important; }
             .page-break { page-break-after: always; break-after: page; }
             @page { size: A4; margin: 10mm; }
         }
         table, th, td {
             border: 1px solid #1e293b !important;
+        }
+        /* 사진대지 페이지 테두리를 깔끔하게 처리하고 불필요한 공간 제거 */
+        .photo-page {
+            box-sizing: border-box;
+            border: 1px solid #cbd5e1;
+        }
+        @media print {
+            .photo-page {
+                border: none !important;
+            }
         }
     </style>
 </head>
@@ -199,7 +209,7 @@
             </div>
 
             <!-- 페이지 2: 사진대지 1 (사진 1~4) -->
-            <div id="page2" class="w-full max-w-[210mm] mx-auto bg-white p-8 text-slate-900 border border-slate-300 shadow-sm relative page-break">
+            <div id="page2" class="photo-page w-full max-w-[210mm] mx-auto bg-white p-8 text-slate-900 shadow-sm relative page-break">
                 <h3 class="text-xl font-bold mb-4 text-center border-b pb-2">검 수 사 진</h3>
                 <div class="grid grid-cols-2 gap-4">
                     <div class="border border-slate-300 flex flex-col items-center justify-between h-[250px] bg-slate-50 rounded overflow-hidden">
@@ -222,7 +232,7 @@
             </div>
 
             <!-- 페이지 3: 사진대지 2 (사진 5~8) -->
-            <div id="page3" class="w-full max-w-[210mm] mx-auto bg-white p-8 text-slate-900 border border-slate-300 shadow-sm relative page-break">
+            <div id="page3" class="photo-page w-full max-w-[210mm] mx-auto bg-white p-8 text-slate-900 shadow-sm relative page-break">
                 <h3 class="text-xl font-bold mb-4 text-center border-b pb-2">검 수 사 진</h3>
                 <div class="grid grid-cols-2 gap-4">
                     <div class="border border-slate-300 flex flex-col items-center justify-between h-[250px] bg-slate-50 rounded overflow-hidden">
@@ -245,7 +255,7 @@
             </div>
 
             <!-- 페이지 4: 사진대지 3 (사진 9~12) -->
-            <div id="page4" class="w-full max-w-[210mm] mx-auto bg-white p-8 text-slate-900 border border-slate-300 shadow-sm relative page-break">
+            <div id="page4" class="photo-page w-full max-w-[210mm] mx-auto bg-white p-8 text-slate-900 shadow-sm relative page-break">
                 <h3 class="text-xl font-bold mb-4 text-center border-b pb-2">검 수 사 진</h3>
                 <div class="grid grid-cols-2 gap-4">
                     <div class="border border-slate-300 flex flex-col items-center justify-between h-[250px] bg-slate-50 rounded overflow-hidden">
@@ -268,7 +278,7 @@
             </div>
 
             <!-- 페이지 5: 사진대지 4 (사진 13~16) -->
-            <div id="page5" class="w-full max-w-[210mm] mx-auto bg-white p-8 text-slate-900 border border-slate-300 shadow-sm relative">
+            <div id="page5" class="photo-page w-full max-w-[210mm] mx-auto bg-white p-8 text-slate-900 shadow-sm relative">
                 <h3 class="text-xl font-bold mb-4 text-center border-b pb-2">검 수 사 진</h3>
                 <div class="grid grid-cols-2 gap-4">
                     <div class="border border-slate-300 flex flex-col items-center justify-between h-[250px] bg-slate-50 rounded overflow-hidden">
