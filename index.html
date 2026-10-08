@@ -1,9 +1,9 @@
-롬<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자동 검수완료확인서 및 사진대지 생성기</title>
+    <title>자동 검수완료확인서 및 사진대지 (최대 15장 지원)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -25,8 +25,8 @@
     <header class="bg-indigo-900 text-white shadow-md no-print py-4 px-6 mb-6">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
             <div>
-                <h1 class="text-2xl font-bold">📋 자동 검수완료확인서 및 사진대지 (최대 16장 지원)</h1>
-                <p class="text-indigo-200 text-sm mt-1">엑셀 복사-붙여넣기, 자동 계산, 사진 순서 변경 및 최대 16장 등록 지원.</p>
+                <h1 class="text-2xl font-bold">📋 자동 검수완료확인서 및 사진대지 (최대 15장 지원)</h1>
+                <p class="text-indigo-200 text-sm mt-1">엑셀 복사-붙여넣기, 자동 계산, 사진 순서 변경 및 최대 15장 등록 지원.</p>
             </div>
             <div class="flex items-center gap-3">
                 <button onclick="window.print()" class="bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-2.5 rounded-lg font-medium shadow transition flex items-center gap-2">
@@ -103,7 +103,7 @@
 
             <!-- 사진 관리 영역 -->
             <div class="space-y-3 pt-2 border-t">
-                <h3 class="text-sm font-semibold text-slate-700">3. 검수 사진 등록 및 순서 관리 (최대 16장)</h3>
+                <h3 class="text-sm font-semibold text-slate-700">3. 검수 사진 등록 및 순서 관리 (최대 15장)</h3>
                 <p class="text-xs text-slate-500">사진을 선택하거나 추가하세요. 등록된 사진의 순서를 변경할 수 있습니다.</p>
                 <input type="file" id="imageInput" multiple accept="image/*" onchange="handleImageUpload(event)" class="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100 cursor-pointer">
                 
@@ -119,6 +119,7 @@
             <div id="page1" class="w-full max-w-[210mm] mx-auto bg-white p-8 text-slate-900 border border-slate-300 shadow-sm relative page-break">
                 
                 <div class="flex justify-between items-start mb-6">
+                    <div></div>
                     <div>
                         <h2 class="text-2xl font-bold tracking-wider text-center underline underline-offset-8">검 수 완 료 확 인 서</h2>
                     </div>
@@ -203,19 +204,19 @@
                 <h3 class="text-xl font-bold mb-6 text-center border-b pb-2">검 수 사 진</h3>
                 <div class="grid grid-cols-2 gap-6">
                     <div class="border border-slate-300 flex flex-col items-center justify-between h-[320px] bg-slate-50 rounded">
-                        <div class="w-full h-[270px] flex items-center justify-center overflow-hidden p-2 bg-white"><img id="photoSlot0" src="https://placehold.co/400x300/f1f5f9/64748b?text=검수+사진+1" class="max-h-full max-w-full object-contain" alt="사진1"></div>
+                        <div class="w-full h-[260px] flex items-center justify-center overflow-hidden p-2 bg-white"><img id="photoSlot0" src="https://placehold.co/400x300/f1f5f9/64748b?text=검수+사진+1" class="max-h-full max-w-full object-contain" alt="사진1"></div>
                         <div id="photoCaption0" class="w-full py-2 bg-slate-100 border-t border-slate-300 text-center text-xs font-semibold truncate px-2">-</div>
                     </div>
                     <div class="border border-slate-300 flex flex-col items-center justify-between h-[320px] bg-slate-50 rounded">
-                        <div class="w-full h-[270px] flex items-center justify-center overflow-hidden p-2 bg-white"><img id="photoSlot1" src="https://placehold.co/400x300/f1f5f9/64748b?text=검수+사진+2" class="max-h-full max-w-full object-contain" alt="사진2"></div>
+                        <div class="w-full h-[260px] flex items-center justify-center overflow-hidden p-2 bg-white"><img id="photoSlot1" src="https://placehold.co/400x300/f1f5f9/64748b?text=검수+사진+2" class="max-h-full max-w-full object-contain" alt="사진2"></div>
                         <div id="photoCaption1" class="w-full py-2 bg-slate-100 border-t border-slate-300 text-center text-xs font-semibold truncate px-2">-</div>
                     </div>
                     <div class="border border-slate-300 flex flex-col items-center justify-between h-[320px] bg-slate-50 rounded">
-                        <div class="w-full h-[270px] flex items-center justify-center overflow-hidden p-2 bg-white"><img id="photoSlot2" src="https://placehold.co/400x300/f1f5f9/64748b?text=검수+사진+3" class="max-h-full max-w-full object-contain" alt="사진3"></div>
+                        <div class="w-full h-[260px] flex items-center justify-center overflow-hidden p-2 bg-white"><img id="photoSlot2" src="https://placehold.co/400x300/f1f5f9/64748b?text=검수+사진+3" class="max-h-full max-w-full object-contain" alt="사진3"></div>
                         <div id="photoCaption2" class="w-full py-2 bg-slate-100 border-t border-slate-300 text-center text-xs font-semibold truncate px-2">-</div>
                     </div>
                     <div class="border border-slate-300 flex flex-col items-center justify-between h-[320px] bg-slate-50 rounded">
-                        <div class="w-full h-[270px] flex items-center justify-center overflow-hidden p-2 bg-white"><img id="photoSlot3" src="https://placehold.co/400x300/f1f5f9/64748b?text=검수+사진+4" class="max-h-full max-w-full object-contain" alt="사진4"></div>
+                        <div class="w-full h-[260px] flex items-center justify-center overflow-hidden p-2 bg-white"><img id="photoSlot3" src="https://placehold.co/400x300/f1f5f9/64748b?text=검수+사진+4" class="max-h-full max-w-full object-contain" alt="사진4"></div>
                         <div id="photoCaption3" class="w-full py-2 bg-slate-100 border-t border-slate-300 text-center text-xs font-semibold truncate px-2">-</div>
                     </div>
                 </div>
@@ -226,19 +227,19 @@
                 <h3 class="text-xl font-bold mb-6 text-center border-b pb-2">검 수 사 진</h3>
                 <div class="grid grid-cols-2 gap-6">
                     <div class="border border-slate-300 flex flex-col items-center justify-between h-[320px] bg-slate-50 rounded">
-                        <div class="w-full h-[270px] flex items-center justify-center overflow-hidden p-2 bg-white"><img id="photoSlot4" src="https://placehold.co/400x300/f1f5f9/64748b?text=검수+사진+5" class="max-h-full max-w-full object-contain" alt="사진5"></div>
+                        <div class="w-full h-[260px] flex items-center justify-center overflow-hidden p-2 bg-white"><img id="photoSlot4" src="https://placehold.co/400x300/f1f5f9/64748b?text=검수+사진+5" class="max-h-full max-w-full object-contain" alt="사진5"></div>
                         <div id="photoCaption4" class="w-full py-2 bg-slate-100 border-t border-slate-300 text-center text-xs font-semibold truncate px-2">-</div>
                     </div>
                     <div class="border border-slate-300 flex flex-col items-center justify-between h-[320px] bg-slate-50 rounded">
-                        <div class="w-full h-[270px] flex items-center justify-center overflow-hidden p-2 bg-white"><img id="photoSlot5" src="https://placehold.co/400x300/f1f5f9/64748b?text=검수+사진+6" class="max-h-full max-w-full object-contain" alt="사진6"></div>
+                        <div class="w-full h-[260px] flex items-center justify-center overflow-hidden p-2 bg-white"><img id="photoSlot5" src="https://placehold.co/400x300/f1f5f9/64748b?text=검수+사진+6" class="max-h-full max-w-full object-contain" alt="사진6"></div>
                         <div id="photoCaption5" class="w-full py-2 bg-slate-100 border-t border-slate-300 text-center text-xs font-semibold truncate px-2">-</div>
                     </div>
                     <div class="border border-slate-300 flex flex-col items-center justify-between h-[320px] bg-slate-50 rounded">
-                        <div class="w-full h-[270px] flex items-center justify-center overflow-hidden p-2 bg-white"><img id="photoSlot6" src="https://placehold.co/400x300/f1f5f9/64748b?text=검수+사진+7" class="max-h-full max-w-full object-contain" alt="사진7"></div>
+                        <div class="w-full h-[260px] flex items-center justify-center overflow-hidden p-2 bg-white"><img id="photoSlot6" src="https://placehold.co/400x300/f1f5f9/64748b?text=검수+사진+7" class="max-h-full max-w-full object-contain" alt="사진7"></div>
                         <div id="photoCaption6" class="w-full py-2 bg-slate-100 border-t border-slate-300 text-center text-xs font-semibold truncate px-2">-</div>
                     </div>
                     <div class="border border-slate-300 flex flex-col items-center justify-between h-[320px] bg-slate-50 rounded">
-                        <div class="w-full h-[270px] flex items-center justify-center overflow-hidden p-2 bg-white"><img id="photoSlot7" src="https://placehold.co/400x300/f1f5f9/64748b?text=검수+사진+8" class="max-h-full max-w-full object-contain" alt="사진8"></div>
+                        <div class="w-full h-[260px] flex items-center justify-center overflow-hidden p-2 bg-white"><img id="photoSlot7" src="https://placehold.co/400x300/f1f5f9/64748b?text=검수+사진+8" class="max-h-full max-w-full object-contain" alt="사진8"></div>
                         <div id="photoCaption7" class="w-full py-2 bg-slate-100 border-t border-slate-300 text-center text-xs font-semibold truncate px-2">-</div>
                     </div>
                 </div>
@@ -249,43 +250,42 @@
                 <h3 class="text-xl font-bold mb-6 text-center border-b pb-2">검 수 사 진</h3>
                 <div class="grid grid-cols-2 gap-6">
                     <div class="border border-slate-300 flex flex-col items-center justify-between h-[320px] bg-slate-50 rounded">
-                        <div class="w-full h-[270px] flex items-center justify-center overflow-hidden p-2 bg-white"><img id="photoSlot8" src="https://placehold.co/400x300/f1f5f9/64748b?text=검수+사진+9" class="max-h-full max-w-full object-contain" alt="사진9"></div>
+                        <div class="w-full h-[260px] flex items-center justify-center overflow-hidden p-2 bg-white"><img id="photoSlot8" src="https://placehold.co/400x300/f1f5f9/64748b?text=검수+사진+9" class="max-h-full max-w-full object-contain" alt="사진9"></div>
                         <div id="photoCaption8" class="w-full py-2 bg-slate-100 border-t border-slate-300 text-center text-xs font-semibold truncate px-2">-</div>
                     </div>
                     <div class="border border-slate-300 flex flex-col items-center justify-between h-[320px] bg-slate-50 rounded">
-                        <div class="w-full h-[270px] flex items-center justify-center overflow-hidden p-2 bg-white"><img id="photoSlot9" src="https://placehold.co/400x300/f1f5f9/64748b?text=검수+사진+10" class="max-h-full max-w-full object-contain" alt="사진10"></div>
+                        <div class="w-full h-[260px] flex items-center justify-center overflow-hidden p-2 bg-white"><img id="photoSlot9" src="https://placehold.co/400x300/f1f5f9/64748b?text=검수+사진+10" class="max-h-full max-w-full object-contain" alt="사진10"></div>
                         <div id="photoCaption9" class="w-full py-2 bg-slate-100 border-t border-slate-300 text-center text-xs font-semibold truncate px-2">-</div>
                     </div>
                     <div class="border border-slate-300 flex flex-col items-center justify-between h-[320px] bg-slate-50 rounded">
-                        <div class="w-full h-[270px] flex items-center justify-center overflow-hidden p-2 bg-white"><img id="photoSlot10" src="https://placehold.co/400x300/f1f5f9/64748b?text=검수+사진+11" class="max-h-full max-w-full object-contain" alt="사진11"></div>
+                        <div class="w-full h-[260px] flex items-center justify-center overflow-hidden p-2 bg-white"><img id="photoSlot10" src="https://placehold.co/400x300/f1f5f9/64748b?text=검수+사진+11" class="max-h-full max-w-full object-contain" alt="사진11"></div>
                         <div id="photoCaption10" class="w-full py-2 bg-slate-100 border-t border-slate-300 text-center text-xs font-semibold truncate px-2">-</div>
                     </div>
                     <div class="border border-slate-300 flex flex-col items-center justify-between h-[320px] bg-slate-50 rounded">
-                        <div class="w-full h-[270px] flex items-center justify-center overflow-hidden p-2 bg-white"><img id="photoSlot11" src="https://placehold.co/400x300/f1f5f9/64748b?text=검수+사진+12" class="max-h-full max-w-full object-contain" alt="사진12"></div>
+                        <div class="w-full h-[260px] flex items-center justify-center overflow-hidden p-2 bg-white"><img id="photoSlot11" src="https://placehold.co/400x300/f1f5f9/64748b?text=검수+사진+12" class="max-h-full max-w-full object-contain" alt="사진12"></div>
                         <div id="photoCaption11" class="w-full py-2 bg-slate-100 border-t border-slate-300 text-center text-xs font-semibold truncate px-2">-</div>
                     </div>
                 </div>
             </div>
 
-            <!-- 페이지 5: 사진대지 4 (사진 13~16) -->
+            <!-- 페이지 5: 사진대지 4 (사진 13~15) -->
             <div id="page5" class="w-full max-w-[210mm] mx-auto bg-white p-8 text-slate-900 border border-slate-300 shadow-sm relative">
                 <h3 class="text-xl font-bold mb-6 text-center border-b pb-2">검 수 사 진</h3>
                 <div class="grid grid-cols-2 gap-6">
                     <div class="border border-slate-300 flex flex-col items-center justify-between h-[320px] bg-slate-50 rounded">
-                        <div class="w-full h-[270px] flex items-center justify-center overflow-hidden p-2 bg-white"><img id="photoSlot12" src="https://placehold.co/400x300/f1f5f9/64748b?text=검수+사진+13" class="max-h-full max-w-full object-contain" alt="사진13"></div>
+                        <div class="w-full h-[260px] flex items-center justify-center overflow-hidden p-2 bg-white"><img id="photoSlot12" src="https://placehold.co/400x300/f1f5f9/64748b?text=검수+사진+13" class="max-h-full max-w-full object-contain" alt="사진13"></div>
                         <div id="photoCaption12" class="w-full py-2 bg-slate-100 border-t border-slate-300 text-center text-xs font-semibold truncate px-2">-</div>
                     </div>
                     <div class="border border-slate-300 flex flex-col items-center justify-between h-[320px] bg-slate-50 rounded">
-                        <div class="w-full h-[270px] flex items-center justify-center overflow-hidden p-2 bg-white"><img id="photoSlot13" src="https://placehold.co/400x300/f1f5f9/64748b?text=검수+사진+14" class="max-h-full max-w-full object-contain" alt="사진14"></div>
+                        <div class="w-full h-[260px] flex items-center justify-center overflow-hidden p-2 bg-white"><img id="photoSlot13" src="https://placehold.co/400x300/f1f5f9/64748b?text=검수+사진+14" class="max-h-full max-w-full object-contain" alt="사진14"></div>
                         <div id="photoCaption13" class="w-full py-2 bg-slate-100 border-t border-slate-300 text-center text-xs font-semibold truncate px-2">-</div>
                     </div>
                     <div class="border border-slate-300 flex flex-col items-center justify-between h-[320px] bg-slate-50 rounded">
-                        <div class="w-full h-[270px] flex items-center justify-center overflow-hidden p-2 bg-white"><img id="photoSlot14" src="https://placehold.co/400x300/f1f5f9/64748b?text=검수+사진+15" class="max-h-full max-w-full object-contain" alt="사진15"></div>
+                        <div class="w-full h-[260px] flex items-center justify-center overflow-hidden p-2 bg-white"><img id="photoSlot14" src="https://placehold.co/400x300/f1f5f9/64748b?text=검수+사진+15" class="max-h-full max-w-full object-contain" alt="사진15"></div>
                         <div id="photoCaption14" class="w-full py-2 bg-slate-100 border-t border-slate-300 text-center text-xs font-semibold truncate px-2">-</div>
                     </div>
-                    <div class="border border-slate-300 flex flex-col items-center justify-between h-[320px] bg-slate-50 rounded">
-                        <div class="w-full h-[270px] flex items-center justify-center overflow-hidden p-2 bg-white"><img id="photoSlot15" src="https://placehold.co/400x300/f1f5f9/64748b?text=검수+사진+16" class="max-h-full max-w-full object-contain" alt="사진16"></div>
-                        <div id="photoCaption15" class="w-full py-2 bg-slate-100 border-t border-slate-300 text-center text-xs font-semibold truncate px-2">-</div>
+                    <div class="border border-slate-300 flex flex-col items-center justify-between h-[320px] bg-slate-50 rounded bg-slate-100">
+                        <!-- 빈 슬롯 -->
                     </div>
                 </div>
             </div>
@@ -299,7 +299,7 @@
             { name: "C57BL/6 [Female]", qty: 60, unitPrice: 18000 }
         ];
 
-        // 업로드된 이미지 저장 배열 (최대 16장)
+        // 업로드된 이미지 저장 배열 (최대 15장)
         let uploadedImages = [];
 
         window.onload = function() {
@@ -390,13 +390,13 @@
             }
         }
 
-        // 사진 파일 업로드 처리 (최대 16장)
+        // 사진 파일 업로드 처리 (최대 15장)
         function handleImageUpload(e) {
             const files = e.target.files;
             if (!files) return;
 
             for (let i = 0; i < files.length; i++) {
-                if (uploadedImages.length >= 16) break;
+                if (uploadedImages.length >= 15) break;
                 const file = files[i];
                 const reader = new FileReader();
 
@@ -462,9 +462,9 @@
             });
         }
 
-        // 사진대지(페이지 2~5) 렌더링 및 매칭
+        // 사진대지(페이지 2~5) 렌더링 및 매칭 (비율 유지 고정)
         function renderPhotoSheets() {
-            for (let i = 0; i < 16; i++) {
+            for (let i = 0; i < 15; i++) {
                 const slotImg = document.getElementById(`photoSlot${i}`);
                 const slotCaption = document.getElementById(`photoCaption${i}`);
 
